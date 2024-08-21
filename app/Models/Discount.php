@@ -12,7 +12,7 @@ class Discount extends Model
     protected $fillable = ['ditails', 'dateline', 'status', 'sold'];
 
     public function participants_sports(){
-        return $this->belongsToMany(Participants_sport::class);
+        return $this->belongsToMany(Participants_sport::class,'payments');
     }
 
     public function updateStatusIfExpired()

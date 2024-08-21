@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class paymentRequest extends FormRequest
+class upPSRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,12 @@ class paymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'participants_sports_id' => ['required', 'exists:participants_sports,id'],
-            'discounts_id' => [ 'exists:discounts,id'],
+            'reason' => ['string','max:255'],
+            'sports_id' => ['exists:sports,id'],
+            'participants_id' => [ 'exists:participants,id'],
+            'status' => [ 'string', 'in:active,not_active'],
+            'subscriptionOne_price' => ['numeric',],
+
         ];
     }
 }

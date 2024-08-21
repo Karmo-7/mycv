@@ -30,7 +30,7 @@ class DiscountController extends Controller
     $validatedData = $request->validated();
     if ($validatedData) {
         $discount->update($validatedData);
-        return response()->json(['article' => $discount], 200);
+        return response()->json(['Discount' => $discount], 200);
     }
     return response()->json(['error' => $validatedData->errors()], 400);
     }

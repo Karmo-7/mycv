@@ -93,6 +93,8 @@ Route::delete('delelteparticipant/{id}',[ParticipantsController::class,'deleltep
 
 
 Route::post('register',[ParticipantsSportController::class,'register']);
+Route::post('updateregister/{id}',[ParticipantsSportController::class,'updateregister']);
+
 
 // use App\Http\Controllers\ParticipantSportController;
 

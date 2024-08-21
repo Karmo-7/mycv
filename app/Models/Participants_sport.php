@@ -9,9 +9,9 @@ use Carbon\Carbon;
 class Participants_sport extends Model
 {
     use HasFactory;
-    protected $fillable=['sports_id','participants_id','subscriptionOne_price','status'];
+    protected $fillable=['sports_id','participants_id','subscriptionOne_price','status','reason'];
     public function discount(){
-        return $this->belongsToMany(Discount::class);
+        return $this->belongsToMany(Discount::class,'payments');
     }
 
     public function participants(){
